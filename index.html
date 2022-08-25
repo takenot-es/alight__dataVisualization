@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<section class="bg-secondary text-white py-5 d-flex align-items-center" style="min-height: 55vh; height: 100%;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>
+                    {{ site.title }}
+                </h1>
+            </div>
+            <div class="col-lg-7">
+                <h5>
+                    {{ site.description }}
+                </h5>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-4 px-2">
+    <div class="container py-2">
+        {% for item in site.pages %}
+        <div class="row border-top py-4">
+            <div class="col">
+                <a href="{{ item.url }}">
+                    <p>
+                        {{ item.date }}
+                    </p>
+                    <h2>
+                        {{ item.title }}
+                    </h2>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>

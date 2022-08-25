@@ -1,0 +1,111 @@
+{% comment %}
+========================
+Variables in Use
+---
+Copy and paste and adjust the tabbing or write these variables for this block in your front mmatter.
+========================
+
+
+- block: bar-chart-horizontal
+  template: bar-chart-horizontal
+  background_color: //Choose background color
+  text_color: //Choose text color
+  has_title: //Insert 'true' or 'false' with single quote
+  title: //Insert your header
+  has_subtitle: //Insert 'true' or 'false' with single quote
+  subtitle: //Insert your header
+  chart_data: //Chose your YAML file name. Just the file name no `.yml`
+
+{% endcomment %}
+<!--
+    Begin:
+    Bar Chart Horizontals
+    {{ section.title }} Charts
+-->
+{% include _snippets/color_assignments.html %}
+<section class="px-2 py-5 bgc--{{ section.background_color }} text-{{ section.text_color }}">
+   <!-- Section Title -->
+   {% if section.has_title == 'true' %}
+   <div class="container-fluid">
+       <div class="row">
+           <div class="col-lg-9 mb-3">
+               <h2>
+                   {{ section.title }}
+               </h2>
+           </div>
+           <!-- Subtitle -->
+           {% if section.has_subtitle == 'true' %}
+           <div class="col-lg-7 mb-3">
+               <h4>
+                   {{ section.subtitle }}
+               </h4>
+           </div>
+           {% endif %}
+           <!-- /End Subtitle -->
+       </div>
+   </div>
+    {% endif %}
+    <!-- /End Section Title -->
+    <div class="container-fluid">
+        <div class="row">
+           <!-- Charts Loop -->
+           <div class="col-lg-9">
+                <div class="row">
+                {% for charts in site.data.[section.chart_data] %}
+                    <!-- Chart {{forloop.index }} -->
+                    <div class="{% if forloop.length > 1 %}col-lg-6 {% else %}col-12{% endif %} border-top py-5">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <p>
+                                    {{ charts.chart }}
+                                </p>
+                            </div>
+                            <div class="col">
+                                {% for item in charts.data %}
+                                    <div class="row align-items-center mt-1">
+                                        <div class="col-auto">
+                                            {{ item.percentage }}{{ charts.metric }}
+                                        </div>
+                                        <div class="bar bgc--{{ item.bar_color }}" style="height: 15px; width: {{ item.percentage }}%;">
+
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /End Chart {{ forloop.index }} -->
+                {% endfor %}
+                </div>
+            </div>
+            <!-- /End Charts Loop -->
+            <!-- Key Start -->
+            <div class="col-lg-2 py-5 ml-auto">
+                {% for charts in site.data.[section.chart_data] | limit: '1' %}
+                    {% for item in charts.data %}
+                        <div class="row pb-2 align-items-center">
+                            <div class="col-auto indicator bgc--{{ item.bar_color }} mr-1" style="display: block; border-radius: 50rem; height: 25px; width: 25px;">
+
+                            </div>
+                            <div class="col">
+                                <p class="small mb-0">
+                                    {{ item.demographic }}
+                                </p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+            <!-- /End Key -->
+        </div>
+    </div>
+</section>
+<!--
+    End:
+    Bar Chart Horizontals
+    {{ section.title }} Charts
+-->
+
+
+
+

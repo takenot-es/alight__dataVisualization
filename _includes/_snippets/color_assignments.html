@@ -1,0 +1,7 @@
+<style>
+{% for item in site.data.colors %}
+    .bgc--{{ item.color }} {
+        background-color: #{{item.value }};
+    }
+{% endfor %}
+</style>

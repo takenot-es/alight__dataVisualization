@@ -1,0 +1,6 @@
+---
+layout: default
+---
+{% for section in page.sections %}
+{% include /_blocks/{{ section.block }}.html %}
+{% endfor %}

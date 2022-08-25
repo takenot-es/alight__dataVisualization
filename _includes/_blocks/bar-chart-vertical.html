@@ -1,0 +1,103 @@
+{% comment %}
+========================
+Variables in Use
+---
+Copy and paste and adjust the tabbing or write these variables for this block in your front mmatter. I'm going to be honest. That loop is a pain in the dick. Please don't mess with it.
+========================
+
+
+- block: bar-chart-vertical
+  template: bar-chart-vertical
+  background_color: //Choose background color
+  text_color: //Choose text color
+  has_title: //Insert 'true' or 'false' with single quote
+  title: //Insert your header
+  has_subtitle: //Insert 'true' or 'false' with single quote
+  subtitle: //Insert your header
+  chart_data: //Chose your YAML file name. Just the file name no `.yml`
+
+{% endcomment %}
+<!--
+    Begin:
+    Bar Chart verticals
+    {{ section.title }} Charts
+-->
+{% include _snippets/color_assignments.html %}
+<section class="px-2 py-5 bgc--{{ section.background_color }} text-{{ section.text_color }}">
+     <!-- Section Title -->
+   {% if section.has_title == 'true' %}
+   <div class="container-fluid">
+       <div class="row">
+           <div class="col-lg-9 mb-3">
+               <h2>
+                   {{ section.title }}
+               </h2>
+           </div>
+           <!-- Subtitle -->
+           {% if section.has_subtitle == 'true' %}
+           <div class="col-lg-7 mb-3">
+               <h4>
+                   {{ section.subtitle }}
+               </h4>
+           </div>
+           {% endif %}
+           <!-- /End Subtitle -->
+       </div>
+   </div>
+    {% endif %}
+    <!-- /End Section Title -->
+   <div class="container-fluid">
+    <div class="row">
+        <!-- Charts Loop -->
+        <div class="col-lg-9">
+            <div class="row">
+            {% for charts in site.data.[section.chart_data] %}
+                <!-- Chart {{forloop.index }} -->
+                {% capture the_cycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+                <div class="{% if forloop.length > 1 %}col-lg-6 {% else %}col-lg-8{% endif %} py-2 {% if forloop.length > 1 %}{% if forloop.last != true %}border-bottom {% endif %}{% if the_cycle == 'odd' %} {% if forloop.last != true %}border-right {% endif %} {% endif %} {% endif %}">
+                    <div class="row px-3">
+                        {% for item in charts.data %}
+                        <div class="col d-flex flex-column justify-content-end" style="height: 175px;">
+                            <div class="bar bgc--{{ item.bar_color }}" style="width: 100%; height: {{ item.percentage }}%;">
+
+                            </div>
+                            <div class="metric text-center mt-2">
+                                <p>
+                                    {{ item.percentage }}{{ charts.metric }}
+                                </p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <p>
+                                {{ charts.chart }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /End Chart {{ forloop.index }} -->
+            {% endfor %}
+            </div>
+        </div>
+        <!-- /End Charts Loop -->
+    </div>
+   </div>
+
+
+</section>
+<!--
+    End:
+    Bar Chart verticals
+    {{ section.title }} Charts
+-->
+
+<div class="row align-items-center mt-1">
+    <div class="col-auto">
+        {{ item.percentage }}{{ charts.metric }}
+    </div>
+    <div class="bar bgc--{{ item.bar_color }}" style="height: 15px; width: {{ item.percentage }}%;">
+
+    </div>
+</div>
