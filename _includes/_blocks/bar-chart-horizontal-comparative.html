@@ -1,0 +1,173 @@
+{% comment %}
+========================
+Variables in Use
+---
+Copy and paste and adjust the tabbing or write these variables for this block in your front mmatter.
+========================
+
+
+- block: bar-chart-horizontal-comparative
+  template: bar-chart-horizontal-comparative
+  background_color: //Choose background color
+  text_color: //Choose text color
+  has_title: //Insert 'true' or 'false' with single quote
+  title: //Insert your header
+  has_subtitle: //Insert 'true' or 'false' with single quote
+  subtitle: //Insert your header
+  footnotes: //Insert Small Text
+  key_loop_limiter: '1' //Must be at least '1'
+  chart_data: //Chose your YAML file name. Just the file name no `.yml`
+
+{% endcomment %}
+<!--
+    Begin:
+    Bar Chart Horizontals comparative
+    {{ section.title }} Charts
+-->
+{% include _snippets/color_assignments.html %}
+<section class="px-2 py-5 bgc--{{ section.background_color }} text-{{ section.text_color }}">
+   <!-- Section Title -->
+   {% if section.has_title == 'true' %}
+   <div class="container-fluid">
+       <div class="row">
+           <div class="col-lg-9 mb-3">
+            <p class="lead">
+                <strong>
+                     {{ section.title }}
+                </strong>
+            </p>
+           </div>
+           <!-- Subtitle -->
+           {% if section.has_subtitle == 'true' %}
+           <div class="col-lg-7 mb-3">
+               <h4>
+                   {{ section.subtitle }}
+               </h4>
+           </div>
+           {% endif %}
+           <!-- /End Subtitle -->
+       </div>
+   </div>
+    {% endif %}
+    <!-- /End Section Title -->
+   <div class="container-fluid">
+    <div class="row">
+         <!-- Charts Loop -->
+         <div class="col-lg-9">
+            <!-- Title Row -->
+            {% for charts in site.data.[section.chart_data] | limit: '1' %}
+               <div class="row d-none d-lg-flex border-bottom">
+                    <div class="col-lg-4 d-none d-lg-flex ml-auto">
+                        <p>
+                            <strong>
+                                {{ charts.comparative_one_demographic }}
+                            </strong>
+                        </p>
+                    </div>
+                    <div class="col-lg-4 d-none d-lg-flex">
+                        <p>
+                            <strong>
+                                {{ charts.comparative_two_demographic }}
+                            </strong>
+                        </p>
+                    </div>
+               </div>               
+            {% endfor %}
+            <!-- /End Title Row -->
+            <!-- Charts Loop -->
+            {% for charts in site.data.[section.chart_data] %}
+                <div class="row  py-3 {% if forloop.last != true %} border-bottom{% endif %}">
+                    <div class="col-lg-4">
+                        <p>
+                            {{ charts.chart }}
+                        </p>
+                    </div>
+                    
+                        <!-- Chart One -->
+                        <div class="col-lg-4 py-2 py-lg-0">
+                            <p class="d-block d-lg-none mb-0">
+                                {{ charts.comparative_one_demographic }}
+                            </p>
+                            {% for item in charts.comparative_one_chart %}
+                            <div class="row align-items-center py-1">
+                                <div class="col-auto">
+                                    <p class="mb-0">
+                                        {{ item.percentage }}{{ charts.metric }}
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <div class="bar bgc--{{ item.bar_color }}" style="height: 15px; width: {{ item.percentage }}%;">
+
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <!-- End Chart One -->
+
+                        <!-- Chart Two -->
+                        <div class="col-lg-4 py-2 py-lg-0">
+                            <p class="d-block d-lg-none mb-0">
+                                {{ charts.comparative_two_demographic }}
+                            </p>
+                            {% for item in charts.comparative_two_chart %}
+                            <div class="row align-items-center py-1">
+                                <div class="col-auto">
+                                    <p class="mb-0">
+                                        {{ item.percentage }}{{ charts.metric }}
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <div class="bar bgc--{{ item.bar_color }}" style="height: 15px; width: {{ item.percentage }}%;">
+
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <!-- End Chart Two -->
+                    
+                </div>
+            {% endfor %}
+            <!-- /End Charts Loop -->
+        </div>
+        <!-- /End Charts Loop -->
+        <!-- Key Start -->
+        <div class="col-lg-2 py-5 ml-auto">
+            {% capture key_limiter %}{{ section.key_loop_limiter }}{% endcapture %}
+            {% for charts in site.data.[section.chart_data] | limit: key_limiter %}
+                {% for item in charts.comparative_one_chart %}
+                    <div class="row pb-2 align-items-center">
+                        <div class="col-auto indicator bgc--{{ item.bar_color }} mr-1" style="display: block; border-radius: 50rem; height: 25px; width: 25px;">
+
+                        </div>
+                        <div class="col">
+                            <p class="small mb-0">
+                                {{ item.key_data }}
+                            </p>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+        <!-- /End Key -->
+    </div>
+   </div>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 pt-4">
+                <p class="small">
+                    {{ section.footnotes }}
+                </p>
+            </div>
+        </div>
+    </div>    
+
+</section>
+<!--
+    End:
+    Bar Chart Horizontals Comparative
+    {{ section.title }} Charts
+-->

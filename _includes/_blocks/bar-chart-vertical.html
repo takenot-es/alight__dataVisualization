@@ -14,6 +14,8 @@ Copy and paste and adjust the tabbing or write these variables for this block in
   title: //Insert your header
   has_subtitle: //Insert 'true' or 'false' with single quote
   subtitle: //Insert your header
+  footnotes: //Insert Small Text
+  key_loop_   limiter: '1' //Must be at least '1'
   chart_data: //Chose your YAML file name. Just the file name no `.yml`
 
 {% endcomment %}
@@ -29,9 +31,11 @@ Copy and paste and adjust the tabbing or write these variables for this block in
    <div class="container-fluid">
        <div class="row">
            <div class="col-lg-9 mb-3">
-               <h2>
-                   {{ section.title }}
-               </h2>
+               <p class="lead">
+                   <strong>
+                        {{ section.title }}
+                   </strong>
+               </p>
            </div>
            <!-- Subtitle -->
            {% if section.has_subtitle == 'true' %}
@@ -54,14 +58,14 @@ Copy and paste and adjust the tabbing or write these variables for this block in
             {% for charts in site.data.[section.chart_data] %}
                 <!-- Chart {{forloop.index }} -->
                 {% capture the_cycle %}{% cycle 'odd', 'even' %}{% endcapture %}
-                <div class="{% if forloop.length > 1 %}col-lg-6 {% else %}col-lg-8{% endif %} py-2 {% if forloop.length > 1 %}{% if forloop.last != true %}border-bottom {% endif %}{% if the_cycle == 'odd' %} {% if forloop.last != true %}border-right {% endif %} {% endif %} {% endif %}">
-                    <div class="row px-3">
+                <div class="{% if forloop.length > 1 %}col-lg-4 col-md-6 {% else %}col-lg-8{% endif %} py-2">
+                    <div class="row px-3 no-gutters">
                         {% for item in charts.data %}
                         <div class="col d-flex flex-column justify-content-end" style="height: 175px;">
-                            <div class="bar bgc--{{ item.bar_color }}" style="width: 100%; height: {{ item.percentage }}%;">
+                            <div class="bar bgc--{{ item.bar_color }}" style="width: 100%; {% if forloop.length > 2 %}max-width: 35px;{% else %}max-width: 100px;{% endif %} margin-left: auto; margin-right: auto; height: {{ item.percentage }}%;">
 
                             </div>
-                            <div class="metric text-center mt-2">
+                            <div class="metric text-center border-top pt-3">
                                 <p>
                                     {{ item.percentage }}{{ charts.metric }}
                                 </p>
@@ -82,6 +86,35 @@ Copy and paste and adjust the tabbing or write these variables for this block in
             </div>
         </div>
         <!-- /End Charts Loop -->
+        <!-- Key Start -->
+        <div class="col-lg-2 py-5 ml-auto">
+            {% capture key_limiter %}{{ section.key_loop_limiter }}{% endcapture %}
+            {% for charts in site.data.[section.chart_data] | limit: key_limiter %}
+                {% for item in charts.data %}
+                    <div class="row pb-2 align-items-center">
+                        <div class="col-auto indicator bgc--{{ item.bar_color }} mr-1" style="display: block; border-radius: 50rem; height: 25px; width: 25px;">
+
+                        </div>
+                        <div class="col">
+                            <p class="small mb-0">
+                                {{ item.demographic }}
+                            </p>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+        <!-- /End Key -->
+    </div>
+   </div>
+
+   <div class="container-fluid">
+    <div class="row">
+        <div class="col-12 pt-4">
+            <p class="small">
+                {{ section.footnotes }}
+            </p>
+        </div>
     </div>
    </div>
 
@@ -92,12 +125,3 @@ Copy and paste and adjust the tabbing or write these variables for this block in
     Bar Chart verticals
     {{ section.title }} Charts
 -->
-
-<div class="row align-items-center mt-1">
-    <div class="col-auto">
-        {{ item.percentage }}{{ charts.metric }}
-    </div>
-    <div class="bar bgc--{{ item.bar_color }}" style="height: 15px; width: {{ item.percentage }}%;">
-
-    </div>
-</div>

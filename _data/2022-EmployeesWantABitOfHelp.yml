@@ -1,0 +1,72 @@
+- chart: Create or manage a budget for personal expenses
+  metric: '%'
+  data:
+    - percentage: '45'
+      demographic: '2022'
+      bar_color: 'orange'
+    - percentage: '39'
+      demographic: '2021'
+      bar_color: 'slate-100'
+- chart: Save for short-term needs
+  metric: '%'
+  data:
+    - percentage: '42'
+      demographic: '2022'
+      bar_color: 'orange'
+    - percentage: '34'
+      demographic: '2021'
+      bar_color: 'slate-100'
+- chart: Save for retirement/long-term needs
+  metric: '%'
+  data:
+    - percentage: '61'
+      demographic: '2022'
+      bar_color: 'orange'
+    - percentage: '57'
+      demographic: '2021'
+      bar_color: 'slate-100'
+- chart: Save for child(ren)’s education
+  metric: '%'
+  data:
+    - percentage: '54'
+      demographic: '2022'
+      bar_color: 'orange'
+    - percentage: '49'
+      demographic: '2021'
+      bar_color: 'slate-100'
+- chart: Establish an emergency fund
+  metric: '%'
+  data:
+    - percentage: '46'
+      demographic: '2022'
+      bar_color: 'orange'
+    - percentage: '40'
+      demographic: '2021'
+      bar_color: 'slate-100'
+- chart: Reduce student loan debt or refinance at lower rates
+  metric: '%'
+  data:
+    - percentage: '60'
+      demographic: '2022'
+      bar_color: 'orange'
+    - percentage: '51'
+      demographic: '2021'
+      bar_color: 'slate-100'
+- chart: Help with managing debt
+  metric: '%'
+  data:
+    - percentage: '54'
+      demographic: '2022'
+      bar_color: 'orange'
+    - percentage: '47'
+      demographic: '2021'
+      bar_color: 'slate-100'
+- chart: Help to improve credit score
+  metric: '%'
+  data:
+    - percentage: '52'
+      demographic: '2022'
+      bar_color: 'orange'
+    - percentage: '46'
+      demographic: '2021'
+      bar_color: 'slate-100'

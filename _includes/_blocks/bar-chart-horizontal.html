@@ -14,6 +14,8 @@ Copy and paste and adjust the tabbing or write these variables for this block in
   title: //Insert your header
   has_subtitle: //Insert 'true' or 'false' with single quote
   subtitle: //Insert your header
+  footnotes: //Insert Small Text
+  key_loop_limiter: '1' //Must be at least '1'
   chart_data: //Chose your YAML file name. Just the file name no `.yml`
 
 {% endcomment %}
@@ -29,9 +31,11 @@ Copy and paste and adjust the tabbing or write these variables for this block in
    <div class="container-fluid">
        <div class="row">
            <div class="col-lg-9 mb-3">
-               <h2>
-                   {{ section.title }}
-               </h2>
+            <p class="lead">
+                <strong>
+                     {{ section.title }}
+                </strong>
+            </p>
            </div>
            <!-- Subtitle -->
            {% if section.has_subtitle == 'true' %}
@@ -81,7 +85,8 @@ Copy and paste and adjust the tabbing or write these variables for this block in
             <!-- /End Charts Loop -->
             <!-- Key Start -->
             <div class="col-lg-2 py-5 ml-auto">
-                {% for charts in site.data.[section.chart_data] | limit: '1' %}
+                {% capture key_limiter %}{{ section.key_loop_limiter }}{% endcapture %}
+                {% for charts in site.data.[section.chart_data] | limit: key_limiter %}
                     {% for item in charts.data %}
                         <div class="row pb-2 align-items-center">
                             <div class="col-auto indicator bgc--{{ item.bar_color }} mr-1" style="display: block; border-radius: 50rem; height: 25px; width: 25px;">
@@ -99,6 +104,15 @@ Copy and paste and adjust the tabbing or write these variables for this block in
             <!-- /End Key -->
         </div>
     </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 pt-4">
+                <p class="small">
+                    {{ section.footnotes }}
+                </p>
+            </div>
+        </div>
+       </div>    
 </section>
 <!--
     End:

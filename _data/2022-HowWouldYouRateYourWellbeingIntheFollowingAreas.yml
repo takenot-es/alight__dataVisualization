@@ -1,0 +1,54 @@
+- chart: My overall wellbeing
+  metric: '%'
+  data:
+    - percentage: '53'
+      demographic: 'U.S.'
+      bar_color: 'blue'
+    - percentage: '42'
+      demographic: 'European'
+      bar_color: 'yellow-100'
+- chart: Mental and emotional
+  metric: '%'
+  data:
+    - percentage: '50'
+      demographic: 'U.S.'
+      bar_color: 'blue'
+    - percentage: '40'
+      demographic: 'European'
+      bar_color: 'yellow-100'
+- chart: Social
+  metric: '%'
+  data:
+    - percentage: '50'
+      demographic: 'U.S.'
+      bar_color: 'blue'
+    - percentage: '45'
+      demographic: 'European'
+      bar_color: 'yellow-100'
+- chart: Physical
+  metric: '%'
+  data:
+    - percentage: '49'
+      demographic: 'U.S.'
+      bar_color: 'blue'
+    - percentage: '39'
+      demographic: 'European'
+      bar_color: 'yellow-100'
+- chart: Professional and career
+  metric: '%'
+  data:
+    - percentage: '49'
+      demographic: 'U.S.'
+      bar_color: 'blue'
+    - percentage: '38'
+      demographic: 'European'
+      bar_color: 'yellow-100'
+- chart: Financial
+  metric: '%'
+  data:
+    - percentage: '45'
+      demographic: 'U.S.'
+      bar_color: 'blue'
+    - percentage: '37'
+      demographic: 'European'
+      bar_color: 'yellow-100'
