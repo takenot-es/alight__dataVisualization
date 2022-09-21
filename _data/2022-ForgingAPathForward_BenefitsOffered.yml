@@ -6,7 +6,7 @@
       bar_color: 'slate-100'
     - percentage: '50'
       demographic: 'U.S.'
-      bar_color: black-70
+      bar_color: 'orange'
     - percentage: '36'
       demographic: 'U.K'
       bar_color: 'blue'
@@ -27,7 +27,7 @@
       bar_color: 'slate-100'
     - percentage: '50'
       demographic: 'U.S.'
-      bar_color: black-70
+      bar_color: 'orange'
     - percentage: '36'
       demographic: 'U.K'
       bar_color: 'blue'
@@ -48,7 +48,7 @@
       bar_color: 'slate-100'
     - percentage: '48'
       demographic: 'U.S.'
-      bar_color: black-70
+      bar_color: 'orange'
     - percentage: '32'
       demographic: 'U.K'
       bar_color: 'blue'
@@ -69,7 +69,7 @@
       bar_color: 'slate-100'
     - percentage: '47'
       demographic: 'U.S.'
-      bar_color: black-70
+      bar_color: 'orange'
     - percentage: '32'
       demographic: 'U.K'
       bar_color: 'blue'
@@ -90,7 +90,7 @@
       bar_color: 'slate-100'
     - percentage: '49'
       demographic: 'U.S.'
-      bar_color: black-70
+      bar_color: 'orange'
     - percentage: '34'
       demographic: 'U.K'
       bar_color: 'blue'

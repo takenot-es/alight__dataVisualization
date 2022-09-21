@@ -61,12 +61,12 @@ Copy and paste and adjust the tabbing or write these variables for this block in
                 <div class="{% if forloop.length > 1 %}col-lg-4 col-md-6 {% else %}col-lg-8{% endif %} py-2">
                     <div class="row px-3 no-gutters">
                         {% for item in charts.data %}
-                        <div class="col d-flex flex-column justify-content-end" style="height: 175px;">
+                        <div class="col d-flex flex-column justify-content-end" style="height: 250px;">
                             <div class="bar bgc--{{ item.bar_color }}" style="width: 100%; {% if forloop.length > 2 %}max-width: 35px;{% else %}max-width: 100px;{% endif %} margin-left: auto; margin-right: auto; height: {{ item.percentage }}%;">
 
                             </div>
                             <div class="metric text-center border-top pt-3">
-                                <p>
+                                <p class="mb-0">
                                     {{ item.percentage }}{{ charts.metric }}
                                 </p>
                             </div>
@@ -108,15 +108,17 @@ Copy and paste and adjust the tabbing or write these variables for this block in
     </div>
    </div>
 
+   {% if section.footnotes != 'null' %}
    <div class="container-fluid">
-    <div class="row">
-        <div class="col-12 pt-4">
-            <p class="small">
-                {{ section.footnotes }}
-            </p>
-        </div>
-    </div>
-   </div>
+       <div class="row">
+           <div class="col-12 pt-4">
+               <p class="small">
+                   {{ section.footnotes }}
+               </p>
+           </div>
+       </div>
+      </div>    
+      {% endif %}
 
 
 </section>

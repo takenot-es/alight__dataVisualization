@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/styles/global.css">
+    
+
+
+
+    <title>
+        
+            The current state of employee wellbeing || Alight Data Visualization Jekyll Blocks
+        
+    </title>    
+</head>
+<body>
+<!-- Don't copy this header. It's strictly for documentation purposes -->
+<style>
+    section.charts-page-header {
+        min-height: 45vh;
+        height: 100%;
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .charts-page-header .charts-page-header-label {
+        display: inline-flex;
+        background-color: #f2f2f2;
+        border-radius: 50rem;
+        padding: 1rem;
+        color: black;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 1px;
+        align-items: center;
+    }
+
+    .charts-page-header .charts-page-header-label span {
+        height: 25px;
+        width: 25px;
+        background-color: #ff9966;
+        margin-right: 1rem;
+        border-radius: 50rem;
+    }
+
+</style>
+
+
+<section class="bg-secondary charts-page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 py-4">
+                <a href="/index.html">
+                    Back
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <p class="charts-page-header-label">
+                    <span>
+
+                    </span>
+                    Charts
+                </p>
+                <h1>
+                    The current state of employee wellbeing
+                </h1>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /End Header -->
+
+
+
+<!--
+    Begin:
+    Bar Chart verticals
+    Overall, how would you rate your wellbeing&colon; (8, 9 or 10, out of 10. Where 0 'couldn't be worse' and 10 'couldn't be better') Charts
+-->
+<style>
+
+    .bgc--yellow-100 {
+        background-color: #FFF200;
+    }
+
+    .bgc--yellow-50 {
+        background-color: #FEF790;
+    }
+
+    .bgc--yellow-40 {
+        background-color: #FEF8A5;
+    }
+
+    .bgc--yellow-30 {
+        background-color: #FFFABA;
+    }
+
+    .bgc--yellow-20 {
+        background-color: #FFFBD1;
+    }
+
+    .bgc--yellow-10 {
+        background-color: #FFFDE7;
+    }
+
+    .bgc--slate-100 {
+        background-color: #0A2029;
+    }
+
+    .bgc--slate-90 {
+        background-color: #27363D;
+    }
+
+    .bgc--slate-80 {
+        background-color: #3E4D53;
+    }
+
+    .bgc--slate-70 {
+        background-color: #576368;
+    }
+
+    .bgc--slate-60 {
+        background-color: #6E797E;
+    }
+
+    .bgc--slate-50 {
+        background-color: #868F93;
+    }
+
+    .bgc--slate-40 {
+        background-color: #9FA6A9;
+    }
+
+    .bgc--slate-30 {
+        background-color: #B7BCBF;
+    }
+
+    .bgc--slate-20 {
+        background-color: #CFD2D4;
+    }
+
+    .bgc--slate-10 {
+        background-color: #E7E9EA;
+    }
+
+    .bgc--slate-05 {
+        background-color: #F3F4F4;
+    }
+
+    .bgc--black-100 {
+        background-color: #000000;
+    }
+
+    .bgc--black-90 {
+        background-color: #191919;
+    }
+
+    .bgc--black-80 {
+        background-color: #333333;
+    }
+
+    .bgc--black-70 {
+        background-color: #4C4C4C;
+    }
+
+    .bgc--black-60 {
+        background-color: #666666;
+    }
+
+    .bgc--black-50 {
+        background-color: #7F7F7F;
+    }
+
+    .bgc--black-40 {
+        background-color: #999999;
+    }
+
+    .bgc--black-30 {
+        background-color: #B2B2B2;
+    }
+
+    .bgc--black-20 {
+        background-color: #CCCCCC;
+    }
+
+    .bgc--black-10 {
+        background-color: #E5E5E5;
+    }
+
+    .bgc--white {
+        background-color: #FFFFFF;
+    }
+
+    .bgc--black {
+        background-color: #000000;
+    }
+
+    .bgc--dark {
+        background-color: #2F4149;
+    }
+
+    .bgc--teal {
+        background-color: #8FE4DE;
+    }
+
+    .bgc--blue {
+        background-color: #A1C4FD;
+    }
+
+    .bgc--purple {
+        background-color: #C4ABDA;
+    }
+
+    .bgc--orange {
+        background-color: #FF9966;
+    }
+
+    .bgc--light {
+        background-color: #F2F2F2;
+    }
+
+</style>
+<section class="px-2 py-5 bgc--white text-null">
+     <!-- Section Title -->
+   
+   <div class="container-fluid">
+       <div class="row">
+           <div class="col-lg-9 mb-3">
+               <p class="lead">
+                   <strong>
+                        Overall, how would you rate your wellbeing&colon; (8, 9 or 10, out of 10. Where 0 'couldn't be worse' and 10 'couldn't be better')
+                   </strong>
+               </p>
+           </div>
+           <!-- Subtitle -->
+           
+           <!-- /End Subtitle -->
+       </div>
+   </div>
+    
+    <!-- /End Section Title -->
+   <div class="container-fluid">
+    <div class="row">
+        <!-- Charts Loop -->
+        <div class="col-lg-9">
+            <div class="row">
+            
+                <!-- Chart 1 -->
+                
+                <div class="col-lg-8 py-2">
+                    <div class="row px-3 no-gutters">
+                        
+                        <div class="col d-flex flex-column justify-content-end" style="height: 250px;">
+                            <div class="bar bgc--slate-100" style="width: 100%; max-width: 35px; margin-left: auto; margin-right: auto; height: 44%;">
+
+                            </div>
+                            <div class="metric text-center border-top pt-3">
+                                <p class="mb-0">
+                                    44%
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="col d-flex flex-column justify-content-end" style="height: 250px;">
+                            <div class="bar bgc--yellow-100" style="width: 100%; max-width: 35px; margin-left: auto; margin-right: auto; height: 53%;">
+
+                            </div>
+                            <div class="metric text-center border-top pt-3">
+                                <p class="mb-0">
+                                    53%
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="col d-flex flex-column justify-content-end" style="height: 250px;">
+                            <div class="bar bgc--blue" style="width: 100%; max-width: 35px; margin-left: auto; margin-right: auto; height: 40%;">
+
+                            </div>
+                            <div class="metric text-center border-top pt-3">
+                                <p class="mb-0">
+                                    40%
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="col d-flex flex-column justify-content-end" style="height: 250px;">
+                            <div class="bar bgc--orange" style="width: 100%; max-width: 35px; margin-left: auto; margin-right: auto; height: 35%;">
+
+                            </div>
+                            <div class="metric text-center border-top pt-3">
+                                <p class="mb-0">
+                                    35%
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="col d-flex flex-column justify-content-end" style="height: 250px;">
+                            <div class="bar bgc--teal" style="width: 100%; max-width: 35px; margin-left: auto; margin-right: auto; height: 44%;">
+
+                            </div>
+                            <div class="metric text-center border-top pt-3">
+                                <p class="mb-0">
+                                    44%
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="col d-flex flex-column justify-content-end" style="height: 250px;">
+                            <div class="bar bgc--black-50" style="width: 100%; max-width: 35px; margin-left: auto; margin-right: auto; height: 46%;">
+
+                            </div>
+                            <div class="metric text-center border-top pt-3">
+                                <p class="mb-0">
+                                    46%
+                                </p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /End Chart 1 -->
+            
+            </div>
+        </div>
+        <!-- /End Charts Loop -->
+        <!-- Key Start -->
+        <div class="col-lg-2 py-5 ml-auto">
+            
+            
+                
+                    <div class="row pb-2 align-items-center">
+                        <div class="col-auto indicator bgc--slate-100 mr-1" style="display: block; border-radius: 50rem; height: 25px; width: 25px;">
+
+                        </div>
+                        <div class="col">
+                            <p class="small mb-0">
+                                Overall
+                            </p>
+                        </div>
+                    </div>
+                
+                    <div class="row pb-2 align-items-center">
+                        <div class="col-auto indicator bgc--yellow-100 mr-1" style="display: block; border-radius: 50rem; height: 25px; width: 25px;">
+
+                        </div>
+                        <div class="col">
+                            <p class="small mb-0">
+                                U.S
+                            </p>
+                        </div>
+                    </div>
+                
+                    <div class="row pb-2 align-items-center">
+                        <div class="col-auto indicator bgc--blue mr-1" style="display: block; border-radius: 50rem; height: 25px; width: 25px;">
+
+                        </div>
+                        <div class="col">
+                            <p class="small mb-0">
+                                U.K.
+                            </p>
+                        </div>
+                    </div>
+                
+                    <div class="row pb-2 align-items-center">
+                        <div class="col-auto indicator bgc--orange mr-1" style="display: block; border-radius: 50rem; height: 25px; width: 25px;">
+
+                        </div>
+                        <div class="col">
+                            <p class="small mb-0">
+                                France
+                            </p>
+                        </div>
+                    </div>
+                
+                    <div class="row pb-2 align-items-center">
+                        <div class="col-auto indicator bgc--teal mr-1" style="display: block; border-radius: 50rem; height: 25px; width: 25px;">
+
+                        </div>
+                        <div class="col">
+                            <p class="small mb-0">
+                                Germany
+                            </p>
+                        </div>
+                    </div>
+                
+                    <div class="row pb-2 align-items-center">
+                        <div class="col-auto indicator bgc--black-50 mr-1" style="display: block; border-radius: 50rem; height: 25px; width: 25px;">
+
+                        </div>
+                        <div class="col">
+                            <p class="small mb-0">
+                                The Netherlands
+                            </p>
+                        </div>
+                    </div>
+                
+            
+        </div>
+        <!-- /End Key -->
+    </div>
+   </div>
+
+   
+
+
+</section>
+<!--
+    End:
+    Bar Chart verticals
+    Overall, how would you rate your wellbeing&colon; (8, 9 or 10, out of 10. Where 0 'couldn't be worse' and 10 'couldn't be better') Charts
+-->
+
+
+<!--
+    Begin:
+    Bar Chart verticals
+    My stress level is usually high/moderate Charts
+-->
+<style>
+
+    .bgc--yellow-100 {
+        background-color: #FFF200;
+    }
+
+    .bgc--yellow-50 {
+        background-color: #FEF790;
+    }
+
+    .bgc--yellow-40 {
+        background-color: #FEF8A5;
+    }
+
+    .bgc--yellow-30 {
+        background-color: #FFFABA;
+    }
+
+    .bgc--yellow-20 {
+        background-color: #FFFBD1;
+    }
+
+    .bgc--yellow-10 {
+        background-color: #FFFDE7;
+    }
+
+    .bgc--slate-100 {
+        background-color: #0A2029;
+    }
+
+    .bgc--slate-90 {
+        background-color: #27363D;
+    }
+
+    .bgc--slate-80 {
+        background-color: #3E4D53;
+    }
+
+    .bgc--slate-70 {
+        background-color: #576368;
+    }
+
+    .bgc--slate-60 {
+        background-color: #6E797E;
+    }
+
+    .bgc--slate-50 {
+        background-color: #868F93;
+    }
+
+    .bgc--slate-40 {
+        background-color: #9FA6A9;
+    }
+
+    .bgc--slate-30 {
+        background-color: #B7BCBF;
+    }
+
+    .bgc--slate-20 {
+        background-color: #CFD2D4;
+    }
+
+    .bgc--slate-10 {
+        background-color: #E7E9EA;
+    }
+
+    .bgc--slate-05 {
+        background-color: #F3F4F4;
+    }
+
+    .bgc--black-100 {
+        background-color: #000000;
+    }
+
+    .bgc--black-90 {
+        background-color: #191919;
+    }
+
+    .bgc--black-80 {
+        background-color: #333333;
+    }
+
+    .bgc--black-70 {
+        background-color: #4C4C4C;
+    }
+
+    .bgc--black-60 {
+        background-color: #666666;
+    }
+
+    .bgc--black-50 {
+        background-color: #7F7F7F;
+    }
+
+    .bgc--black-40 {
+        background-color: #999999;
+    }
+
+    .bgc--black-30 {
+        background-color: #B2B2B2;
+    }
+
+    .bgc--black-20 {
+        background-color: #CCCCCC;
+    }
+
+    .bgc--black-10 {
+        background-color: #E5E5E5;
+    }
+
+    .bgc--white {
+        background-color: #FFFFFF;
+    }
+
+    .bgc--black {
+        background-color: #000000;
+    }
+
+    .bgc--dark {
+        background-color: #2F4149;
+    }
+
+    .bgc--teal {
+        background-color: #8FE4DE;
+    }
+
+    .bgc--blue {
+        background-color: #A1C4FD;
+    }
+
+    .bgc--purple {
+        background-color: #C4ABDA;
+    }
+
+    .bgc--orange {
+        background-color: #FF9966;
+    }
+
+    .bgc--light {
+        background-color: #F2F2F2;
+    }
+
+</style>
+<section class="px-2 py-5 bgc--white text-null">
+     <!-- Section Title -->
+   
+   <div class="container-fluid">
+       <div class="row">
+           <div class="col-lg-9 mb-3">
+               <p class="lead">
+                   <strong>
+                        My stress level is usually high/moderate
+                   </strong>
+               </p>
+           </div>
+           <!-- Subtitle -->
+           
+           <!-- /End Subtitle -->
+       </div>
+   </div>
+    
+    <!-- /End Section Title -->
+   <div class="container-fluid">
+    <div class="row">
+        <!-- Charts Loop -->
+        <div class="col-lg-9">
+            <div class="row">
+            
+                <!-- Chart 1 -->
+                
+                <div class="col-lg-8 py-2">
+                    <div class="row px-3 no-gutters">
+                        
+                        <div class="col d-flex flex-column justify-content-end" style="height: 250px;">
+                            <div class="bar bgc--slate-100" style="width: 100%; max-width: 35px; margin-left: auto; margin-right: auto; height: 73%;">
+
+                            </div>
+                            <div class="metric text-center border-top pt-3">
+                                <p class="mb-0">
+                                    73%
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="col d-flex flex-column justify-content-end" style="height: 250px;">
+                            <div class="bar bgc--yellow-100" style="width: 100%; max-width: 35px; margin-left: auto; margin-right: auto; height: 75%;">
+
+                            </div>
+                            <div class="metric text-center border-top pt-3">
+                                <p class="mb-0">
+                                    75%
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="col d-flex flex-column justify-content-end" style="height: 250px;">
+                            <div class="bar bgc--blue" style="width: 100%; max-width: 35px; margin-left: auto; margin-right: auto; height: 71%;">
+
+                            </div>
+                            <div class="metric text-center border-top pt-3">
+                                <p class="mb-0">
+                                    71%
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="col d-flex flex-column justify-content-end" style="height: 250px;">
+                            <div class="bar bgc--orange" style="width: 100%; max-width: 35px; margin-left: auto; margin-right: auto; height: 72%;">
+
+                            </div>
+                            <div class="metric text-center border-top pt-3">
+                                <p class="mb-0">
+                                    72%
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="col d-flex flex-column justify-content-end" style="height: 250px;">
+                            <div class="bar bgc--teal" style="width: 100%; max-width: 35px; margin-left: auto; margin-right: auto; height: 80%;">
+
+                            </div>
+                            <div class="metric text-center border-top pt-3">
+                                <p class="mb-0">
+                                    80%
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="col d-flex flex-column justify-content-end" style="height: 250px;">
+                            <div class="bar bgc--black-50" style="width: 100%; max-width: 35px; margin-left: auto; margin-right: auto; height: 66%;">
+
+                            </div>
+                            <div class="metric text-center border-top pt-3">
+                                <p class="mb-0">
+                                    66%
+                                </p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /End Chart 1 -->
+            
+            </div>
+        </div>
+        <!-- /End Charts Loop -->
+        <!-- Key Start -->
+        <div class="col-lg-2 py-5 ml-auto">
+            
+            
+                
+                    <div class="row pb-2 align-items-center">
+                        <div class="col-auto indicator bgc--slate-100 mr-1" style="display: block; border-radius: 50rem; height: 25px; width: 25px;">
+
+                        </div>
+                        <div class="col">
+                            <p class="small mb-0">
+                                Overall
+                            </p>
+                        </div>
+                    </div>
+                
+                    <div class="row pb-2 align-items-center">
+                        <div class="col-auto indicator bgc--yellow-100 mr-1" style="display: block; border-radius: 50rem; height: 25px; width: 25px;">
+
+                        </div>
+                        <div class="col">
+                            <p class="small mb-0">
+                                U.S
+                            </p>
+                        </div>
+                    </div>
+                
+                    <div class="row pb-2 align-items-center">
+                        <div class="col-auto indicator bgc--blue mr-1" style="display: block; border-radius: 50rem; height: 25px; width: 25px;">
+
+                        </div>
+                        <div class="col">
+                            <p class="small mb-0">
+                                U.K.
+                            </p>
+                        </div>
+                    </div>
+                
+                    <div class="row pb-2 align-items-center">
+                        <div class="col-auto indicator bgc--orange mr-1" style="display: block; border-radius: 50rem; height: 25px; width: 25px;">
+
+                        </div>
+                        <div class="col">
+                            <p class="small mb-0">
+                                France
+                            </p>
+                        </div>
+                    </div>
+                
+                    <div class="row pb-2 align-items-center">
+                        <div class="col-auto indicator bgc--teal mr-1" style="display: block; border-radius: 50rem; height: 25px; width: 25px;">
+
+                        </div>
+                        <div class="col">
+                            <p class="small mb-0">
+                                Germany
+                            </p>
+                        </div>
+                    </div>
+                
+                    <div class="row pb-2 align-items-center">
+                        <div class="col-auto indicator bgc--black-50 mr-1" style="display: block; border-radius: 50rem; height: 25px; width: 25px;">
+
+                        </div>
+                        <div class="col">
+                            <p class="small mb-0">
+                                The Netherlands
+                            </p>
+                        </div>
+                    </div>
+                
+            
+        </div>
+        <!-- /End Key -->
+    </div>
+   </div>
+
+   
+
+
+</section>
+<!--
+    End:
+    Bar Chart verticals
+    My stress level is usually high/moderate Charts
+-->
+
+
+<!--
+    Begin:
+    Bar Chart Horizontals comparative
+    How intimidated are your by financial matters and are you afraid of running out of money in retirement? Charts
+-->
+<style>
+
+    .bgc--yellow-100 {
+        background-color: #FFF200;
+    }
+
+    .bgc--yellow-50 {
+        background-color: #FEF790;
+    }
+
+    .bgc--yellow-40 {
+        background-color: #FEF8A5;
+    }
+
+    .bgc--yellow-30 {
+        background-color: #FFFABA;
+    }
+
+    .bgc--yellow-20 {
+        background-color: #FFFBD1;
+    }
+
+    .bgc--yellow-10 {
+        background-color: #FFFDE7;
+    }
+
+    .bgc--slate-100 {
+        background-color: #0A2029;
+    }
+
+    .bgc--slate-90 {
+        background-color: #27363D;
+    }
+
+    .bgc--slate-80 {
+        background-color: #3E4D53;
+    }
+
+    .bgc--slate-70 {
+        background-color: #576368;
+    }
+
+    .bgc--slate-60 {
+        background-color: #6E797E;
+    }
+
+    .bgc--slate-50 {
+        background-color: #868F93;
+    }
+
+    .bgc--slate-40 {
+        background-color: #9FA6A9;
+    }
+
+    .bgc--slate-30 {
+        background-color: #B7BCBF;
+    }
+
+    .bgc--slate-20 {
+        background-color: #CFD2D4;
+    }
+
+    .bgc--slate-10 {
+        background-color: #E7E9EA;
+    }
+
+    .bgc--slate-05 {
+        background-color: #F3F4F4;
+    }
+
+    .bgc--black-100 {
+        background-color: #000000;
+    }
+
+    .bgc--black-90 {
+        background-color: #191919;
+    }
+
+    .bgc--black-80 {
+        background-color: #333333;
+    }
+
+    .bgc--black-70 {
+        background-color: #4C4C4C;
+    }
+
+    .bgc--black-60 {
+        background-color: #666666;
+    }
+
+    .bgc--black-50 {
+        background-color: #7F7F7F;
+    }
+
+    .bgc--black-40 {
+        background-color: #999999;
+    }
+
+    .bgc--black-30 {
+        background-color: #B2B2B2;
+    }
+
+    .bgc--black-20 {
+        background-color: #CCCCCC;
+    }
+
+    .bgc--black-10 {
+        background-color: #E5E5E5;
+    }
+
+    .bgc--white {
+        background-color: #FFFFFF;
+    }
+
+    .bgc--black {
+        background-color: #000000;
+    }
+
+    .bgc--dark {
+        background-color: #2F4149;
+    }
+
+    .bgc--teal {
+        background-color: #8FE4DE;
+    }
+
+    .bgc--blue {
+        background-color: #A1C4FD;
+    }
+
+    .bgc--purple {
+        background-color: #C4ABDA;
+    }
+
+    .bgc--orange {
+        background-color: #FF9966;
+    }
+
+    .bgc--light {
+        background-color: #F2F2F2;
+    }
+
+</style>
+<section class="px-2 py-5 bgc--white text-null">
+   <!-- Section Title -->
+   
+   <div class="container-fluid">
+       <div class="row">
+           <div class="col-lg-9 mb-3">
+            <p class="lead">
+                <strong>
+                     How intimidated are your by financial matters and are you afraid of running out of money in retirement?
+                </strong>
+            </p>
+           </div>
+           <!-- Subtitle -->
+           
+           <!-- /End Subtitle -->
+       </div>
+   </div>
+    
+    <!-- /End Section Title -->
+   <div class="container-fluid">
+    <div class="row">
+         <!-- Charts Loop -->
+         <div class="col-lg-9">
+            <!-- Title Row -->
+            
+               <div class="row d-none d-lg-flex border-bottom">
+                    <div class="col-lg-4 d-none d-lg-flex ml-auto">
+                        <p>
+                            <strong>
+                                I am often intimidated by financial matters
+                            </strong>
+                        </p>
+                    </div>
+                    <div class="col-lg-4 d-none d-lg-flex">
+                        <p>
+                            <strong>
+                                I am afraid I will run out of money in retirement
+                            </strong>
+                        </p>
+                    </div>
+               </div>               
+            
+            <!-- /End Title Row -->
+            <!-- Charts Loop -->
+            
+                <div class="row  py-3  border-bottom">
+                    <div class="col-lg-4">
+                        <p>
+                            Overall
+                        </p>
+                    </div>
+                    
+                        <!-- Chart One -->
+                        <div class="col-lg-4 py-2 py-lg-0">
+                            <p class="d-block d-lg-none mb-0">
+                                I am often intimidated by financial matters
+                            </p>
+                            
+                            
+                            <div class="row align-items-center py-1">
+                                <div class="col-auto">
+                                    <p class="mb-0">
+                                        24%
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <div class="bar bgc--orange" style="height: 15px; width: 24%;">
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            
+                        </div>
+                        <!-- End Chart One -->
+
+                        <!-- Chart Two -->
+                        <div class="col-lg-4 py-2 py-lg-0">
+                            <p class="d-block d-lg-none mb-0">
+                                I am afraid I will run out of money in retirement
+                            </p>
+                            
+                            
+                            <div class="row align-items-center py-1">
+                                <div class="col-auto">
+                                    <p class="mb-0">
+                                        38%
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <div class="bar bgc--slate-100" style="height: 15px; width: 38%;">
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        <!-- End Chart Two -->
+                    
+                </div>
+            
+                <div class="row  py-3  border-bottom">
+                    <div class="col-lg-4">
+                        <p>
+                            U.S.
+                        </p>
+                    </div>
+                    
+                        <!-- Chart One -->
+                        <div class="col-lg-4 py-2 py-lg-0">
+                            <p class="d-block d-lg-none mb-0">
+                                I am often intimidated by financial matters
+                            </p>
+                            
+                            
+                            <div class="row align-items-center py-1">
+                                <div class="col-auto">
+                                    <p class="mb-0">
+                                        36%
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <div class="bar bgc--orange" style="height: 15px; width: 36%;">
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        <!-- End Chart One -->
+
+                        <!-- Chart Two -->
+                        <div class="col-lg-4 py-2 py-lg-0">
+                            <p class="d-block d-lg-none mb-0">
+                                I am afraid I will run out of money in retirement
+                            </p>
+                            
+                            
+                            <div class="row align-items-center py-1">
+                                <div class="col-auto">
+                                    <p class="mb-0">
+                                        42%
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <div class="bar bgc--slate-100" style="height: 15px; width: 42%;">
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        <!-- End Chart Two -->
+                    
+                </div>
+            
+                <div class="row  py-3  border-bottom">
+                    <div class="col-lg-4">
+                        <p>
+                            U.K.
+                        </p>
+                    </div>
+                    
+                        <!-- Chart One -->
+                        <div class="col-lg-4 py-2 py-lg-0">
+                            <p class="d-block d-lg-none mb-0">
+                                I am often intimidated by financial matters
+                            </p>
+                            
+                            
+                            <div class="row align-items-center py-1">
+                                <div class="col-auto">
+                                    <p class="mb-0">
+                                        25%
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <div class="bar bgc--orange" style="height: 15px; width: 25%;">
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        <!-- End Chart One -->
+
+                        <!-- Chart Two -->
+                        <div class="col-lg-4 py-2 py-lg-0">
+                            <p class="d-block d-lg-none mb-0">
+                                I am afraid I will run out of money in retirement
+                            </p>
+                            
+                            
+                            <div class="row align-items-center py-1">
+                                <div class="col-auto">
+                                    <p class="mb-0">
+                                        39%
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <div class="bar bgc--slate-100" style="height: 15px; width: 39%;">
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        <!-- End Chart Two -->
+                    
+                </div>
+            
+                <div class="row  py-3  border-bottom">
+                    <div class="col-lg-4">
+                        <p>
+                            France
+                        </p>
+                    </div>
+                    
+                        <!-- Chart One -->
+                        <div class="col-lg-4 py-2 py-lg-0">
+                            <p class="d-block d-lg-none mb-0">
+                                I am often intimidated by financial matters
+                            </p>
+                            
+                            
+                            <div class="row align-items-center py-1">
+                                <div class="col-auto">
+                                    <p class="mb-0">
+                                        16%
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <div class="bar bgc--orange" style="height: 15px; width: 16%;">
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        <!-- End Chart One -->
+
+                        <!-- Chart Two -->
+                        <div class="col-lg-4 py-2 py-lg-0">
+                            <p class="d-block d-lg-none mb-0">
+                                I am afraid I will run out of money in retirement
+                            </p>
+                            
+                            
+                            <div class="row align-items-center py-1">
+                                <div class="col-auto">
+                                    <p class="mb-0">
+                                        42%
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <div class="bar bgc--slate-100" style="height: 15px; width: 42%;">
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        <!-- End Chart Two -->
+                    
+                </div>
+            
+                <div class="row  py-3  border-bottom">
+                    <div class="col-lg-4">
+                        <p>
+                            Germany
+                        </p>
+                    </div>
+                    
+                        <!-- Chart One -->
+                        <div class="col-lg-4 py-2 py-lg-0">
+                            <p class="d-block d-lg-none mb-0">
+                                I am often intimidated by financial matters
+                            </p>
+                            
+                            
+                            <div class="row align-items-center py-1">
+                                <div class="col-auto">
+                                    <p class="mb-0">
+                                        20%
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <div class="bar bgc--orange" style="height: 15px; width: 20%;">
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        <!-- End Chart One -->
+
+                        <!-- Chart Two -->
+                        <div class="col-lg-4 py-2 py-lg-0">
+                            <p class="d-block d-lg-none mb-0">
+                                I am afraid I will run out of money in retirement
+                            </p>
+                            
+                            
+                            <div class="row align-items-center py-1">
+                                <div class="col-auto">
+                                    <p class="mb-0">
+                                        41%
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <div class="bar bgc--slate-100" style="height: 15px; width: 41%;">
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        <!-- End Chart Two -->
+                    
+                </div>
+            
+                <div class="row  py-3 ">
+                    <div class="col-lg-4">
+                        <p>
+                            The Netherlands
+                        </p>
+                    </div>
+                    
+                        <!-- Chart One -->
+                        <div class="col-lg-4 py-2 py-lg-0">
+                            <p class="d-block d-lg-none mb-0">
+                                I am often intimidated by financial matters
+                            </p>
+                            
+                            
+                            <div class="row align-items-center py-1">
+                                <div class="col-auto">
+                                    <p class="mb-0">
+                                        24%
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <div class="bar bgc--orange" style="height: 15px; width: 24%;">
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        <!-- End Chart One -->
+
+                        <!-- Chart Two -->
+                        <div class="col-lg-4 py-2 py-lg-0">
+                            <p class="d-block d-lg-none mb-0">
+                                I am afraid I will run out of money in retirement
+                            </p>
+                            
+                            
+                            <div class="row align-items-center py-1">
+                                <div class="col-auto">
+                                    <p class="mb-0">
+                                        24%
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <div class="bar bgc--slate-100" style="height: 15px; width: 24%;">
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        <!-- End Chart Two -->
+                    
+                </div>
+            
+            <!-- /End Charts Loop -->
+        </div>
+        <!-- /End Charts Loop -->
+        <!-- Key Start -->
+        <div class="col-lg-2 py-5 ml-auto">
+            
+            
+                
+                    <div class="row pb-2 align-items-center">
+                        <div class="col-auto indicator bgc--orange mr-1" style="display: block; border-radius: 50rem; height: 25px; width: 25px;">
+
+                        </div>
+                        <div class="col">
+                            <p class="small mb-0">
+                                I am often intimidated by financial matters
+                            </p>
+                        </div>
+                    </div>
+                
+                    <div class="row pb-2 align-items-center">
+                        <div class="col-auto indicator bgc--slate-100 mr-1" style="display: block; border-radius: 50rem; height: 25px; width: 25px;">
+
+                        </div>
+                        <div class="col">
+                            <p class="small mb-0">
+                                I am afraid I will run out of money in retirement
+                            </p>
+                        </div>
+                    </div>
+                
+            
+        </div>
+        <!-- /End Key -->
+    </div>
+   </div>
+
+
+   
+
+</section>
+<!--
+    End:
+    Bar Chart Horizontals Comparative
+    How intimidated are your by financial matters and are you afraid of running out of money in retirement? Charts
+-->
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+- chart: Overall
+  metric: '%'
+  comparative_one_demographic: 'I am often intimidated by financial matters'
+  comparative_one_chart:
+    - percentage: '24'
+      key_data: 'I am often intimidated by financial matters'
+      bar_color: 'orange'
+    - percentage: null
+      key_data: 'I am afraid I will run out of money in retirement'
+      bar_color: 'slate-100'
+  comparative_two_demographic: 'I am afraid I will run out of money in retirement'
+  comparative_two_chart:
+    - percentage: '38'
+      key_data: 'Pre-Pandemic 2020'
+      bar_color: 'slate-100'
+- chart: U.S.
+  metric: '%'
+  comparative_one_demographic: 'I am often intimidated by financial matters'
+  comparative_one_chart:
+    - percentage: '36'
+      key_data: 'I am often intimidated by financial matters'
+      bar_color: 'orange'
+  comparative_two_demographic: 'I am afraid I will run out of money in retirement'
+  comparative_two_chart:
+    - percentage: '42'
+      key_data: 'Pre-Pandemic 2020'
+      bar_color: 'slate-100'
+- chart: U.K.
+  metric: '%'
+  comparative_one_demographic: 'I am often intimidated by financial matters'
+  comparative_one_chart:
+    - percentage: '25'
+      key_data: 'I am often intimidated by financial matters'
+      bar_color: 'orange'
+  comparative_two_demographic: 'I am afraid I will run out of money in retirement'
+  comparative_two_chart:
+    - percentage: '39'
+      key_data: 'Pre-Pandemic 2020'
+      bar_color: 'slate-100'
+- chart: France
+  metric: '%'
+  comparative_one_demographic: 'I am often intimidated by financial matters'
+  comparative_one_chart:
+    - percentage: '16'
+      key_data: 'I am often intimidated by financial matters'
+      bar_color: 'orange'
+  comparative_two_demographic: 'I am afraid I will run out of money in retirement'
+  comparative_two_chart:
+    - percentage: '42'
+      key_data: 'Pre-Pandemic 2020'
+      bar_color: 'slate-100'
+- chart: Germany
+  metric: '%'
+  comparative_one_demographic: 'I am often intimidated by financial matters'
+  comparative_one_chart:
+    - percentage: '20'
+      key_data: 'I am often intimidated by financial matters'
+      bar_color: 'orange'
+  comparative_two_demographic: 'I am afraid I will run out of money in retirement'
+  comparative_two_chart:
+    - percentage: '41'
+      key_data: 'Pre-Pandemic 2020'
+      bar_color: 'slate-100'
+- chart: The Netherlands
+  metric: '%'
+  comparative_one_demographic: 'I am often intimidated by financial matters'
+  comparative_one_chart:
+    - percentage: '24'
+      key_data: 'I am often intimidated by financial matters'
+      bar_color: 'orange'
+  comparative_two_demographic: 'I am afraid I will run out of money in retirement'
+  comparative_two_chart:
+    - percentage: '24'
+      key_data: 'Pre-Pandemic 2020'
+      bar_color: 'slate-100'

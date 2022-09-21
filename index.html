@@ -21,7 +21,8 @@ layout: default
 
 <section class="py-4 px-2">
     <div class="container py-2">
-        {% for item in site.pages %}
+        {% assign sorted = site.pages | sort: 'date' | reverse %}
+        {% for item in sorted %}
         <div class="row border-top py-4">
             <div class="col">
                 <a href="{{ item.url }}">
